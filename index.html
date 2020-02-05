@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HeartBeatDesk</title>
+</head>
+
+<body>
+	<h1>aaa</h1>
+		<button onclick="hello()">tapme</button>
+<audio src="./WindowsNotify.wav" id="aut"/>
+
+文档的内容......
+</body>
+
+
+</html>
+
+	<script>
+		// const player = require('play-sound')
+		const {ipcRenderer}=require('electron')
+		 // var play = require('play').Play();
+		// const process=require('process')
+		var audio_bg=document.getElementById("aut")
+		
+		 function hello(){
+		 		ipcRenderer.send('hello')
+		 
+		 // 		  // play with a callback
+		 // 		play.sound('./WindowNotify.wav', function(){
+		 // 		console.log('well done ')
+		 // 		  
+		 // 		});
+		 // 		play.on('play', function (valid) {
+		 //   console.log('I just started playing!');
+		 // });
+		 // 
+		 // play.on('error', function () {
+		 //   console.log('I can't play!');
+		 // });
+		 		
+		 	 // player.play(__dirname+'./WindowsNotify.wav', function(err){
+		 		//  process.stdout.write(__dirname)
+		 	 //   if (err) throw err
+		 	 // })
+		 	 
+		 	 // process.stdout.write("start ./'Windows Notify.wav' \x0D")
+		 		// process.stdout.write('/x07')
+		 	// audio_bg.play()
+		 }
+			ipcRenderer.on('echo',(val)=>{
+				console.log('successful!');
+				audio_bg.play();
+			})
+		
+	</script>
