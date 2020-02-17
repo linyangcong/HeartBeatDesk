@@ -74,8 +74,9 @@ function createWindow () {
     }
   })
 
-  // 加载index.html文件
-   win.loadURL('http://192.168.0.109:8080/#/')
+  // 加载uri文件
+   win.loadURL('http://192.168.0.102:8080/#/')
+   // 加载index.html文件
 	// win.loadFile('index.html')
 }
 
